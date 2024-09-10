@@ -152,3 +152,29 @@ button {
     -moz-box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.38);
     box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.38);
 }
+
+.info{
+    background-color: rgba(247, 247, 247, 0.534);
+}
+
+.icon, .button{
+  
+    width: 79px;
+    height: 79px;
+
+}
+
+button{
+    border-radius: 15px;
+    width: 142px;
+    height: 52px;
+}
+
+.icon{
+    border-radius: 23px;
+    text-align: center;
+}
+button, .icon{
+    filter: drop-shadow(-6px 6px 0px #000000);
+    background-color: #F2CB05;
+}
