@@ -170,6 +170,13 @@ button{
     height: 52px;
 }
 
+
+.icon >img {
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 .icon{
     border-radius: 23px;
     text-align: center;
