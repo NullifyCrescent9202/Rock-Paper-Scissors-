@@ -100,6 +100,7 @@ img {
     width: 482px;
     height: 81px;
     border-radius: 19px;
+    gap: 14px;
 
 
 }
@@ -107,7 +108,6 @@ img {
 button {
     border-style: none;
     border-radius: 15px;
-
     width: 142px;
     height: 52px;
 }
