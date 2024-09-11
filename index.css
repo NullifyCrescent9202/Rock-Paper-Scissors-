@@ -1,9 +1,19 @@
+
+.orbitron-<uniquifier> {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+
 .main>div{
     border: solid 2px rgb(255, 255, 255);
 }
 
 body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Orbitron;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
