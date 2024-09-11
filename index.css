@@ -43,11 +43,11 @@ img {
   }
 
   .player{
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 65px;
   }
 
   .roundhistory{
@@ -55,12 +55,10 @@ img {
     display: flex;
   }
   .playercolumn{
-    margin-top: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(212, 212, 212, 0.089);
     border-radius: 20px;
     height: 320px;
     margin-bottom: 20px;
@@ -97,7 +95,6 @@ img {
     align-items: center;
     justify-content: center;
     padding-top: auto;
-    background-color: rgb(243, 243, 243);
     width: 482px;
     height: 81px;
     border-radius: 19px;
@@ -156,7 +153,6 @@ button {
 }
 
 .info{
-    background-color: rgba(247, 247, 247, 0.534);
 }
 
 .icon, .button{
