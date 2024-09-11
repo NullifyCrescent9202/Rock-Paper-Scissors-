@@ -1,19 +1,8 @@
-
-.orbitron-<uniquifier> {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
-
-
 .main>div{
     border: solid 2px rgb(255, 255, 255);
 }
 
 body{
-    font-family: Orbitron;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
@@ -163,11 +152,20 @@ button {
     box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.137);
 }
 
-h3 {
-    font-size: 1.4rem;
+h3{
+    line-height: 0px;
+    font-size: 1.3rem;
+
+}
+
+h3,
+.score {
     font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.6);
 }
 .info{
+    font-family: Orbitron;
 }
 
 .icon, .button{
