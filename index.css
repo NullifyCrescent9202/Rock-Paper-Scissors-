@@ -150,7 +150,7 @@ button {
  .score{
     -webkit-box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.38);
     -moz-box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.38);
-    box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.38);
+    box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.137);
 }
 
 .info{
@@ -167,6 +167,8 @@ button{
     border-radius: 15px;
     width: 142px;
     height: 52px;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 
