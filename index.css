@@ -41,7 +41,7 @@ body{
   }
 
   .player{
-    margin-bottom: 20px;
+    margin-bottom: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ body{
     flex-direction: column;
     border-radius: 20px;
     height: 320px;
-    margin-bottom: 85px;
+    margin-bottom: 20px;
     width: 115px;
 
   }
