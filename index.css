@@ -41,6 +41,7 @@ body{
   }
 
   .player{
+    margin-top: 40px;
     margin-bottom: 55px;
     display: flex;
     justify-content: center;
@@ -59,7 +60,7 @@ body{
     flex-direction: column;
     border-radius: 20px;
     height: 320px;
-    margin-bottom: 20px;
+    margin-bottom: 300px;
     width: 115px;
 
   }
@@ -89,7 +90,7 @@ body{
 
 
 .buttons{
-    margin-top: 72px;
+    margin-top: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,6 +114,7 @@ button {
     height: 80px;
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
+    margin-top: -275px;
 }
 
 
