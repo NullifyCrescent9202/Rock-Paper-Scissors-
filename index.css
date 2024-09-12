@@ -201,3 +201,7 @@ button, .icon{
     filter: drop-shadow(-6px 6px 0px #000000);
     background-color: #F2CB05;
 }
+
+button:hover {
+    background-color: #caa900;
+}
