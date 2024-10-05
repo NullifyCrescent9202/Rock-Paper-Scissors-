@@ -89,6 +89,9 @@ function playGame(){
 
 const body = document.querySelector("body");
 
+
+
+
 const rock = document.querySelector(".rock_button");
 rock.addEventListener("click", (e) =>{
     playRound((choices[0]), getComputerChoice());
@@ -108,7 +111,7 @@ scissors.addEventListener("click", (e) =>{
 })
 
 
-console.log(rock, paper, scissors);
+
 
 
 function getScore(){
