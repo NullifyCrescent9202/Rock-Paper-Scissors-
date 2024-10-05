@@ -21,23 +21,22 @@ function getHumanChoice(){
 
 function playRound(humanChoice, computerChoice){
     if(humanChoice === computerChoice){
-        alert("Tie");
         return("Tie");
     } else if (humanChoice === "rock" && computerChoice === "scissors"){
         humanScore += 1;
-        alert("Human wins!");
+        player_Score.textContent = (humanScore);
         return("Human wins!");
     } else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore += 1;
-        alert("Human wins!");
+        player_Score.textContent = (humanScore);
         return("Human wins!");
     } else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore += 1;
-        alert("Human wins!");
+        player_Score.textContent = (humanScore);
         return("Human wins!");
     } else {
         computerScore += 1;
-        alert("computer wins!");
+        computer_Score.textContent = computerScore;
         return ("Computer wins!")
     }
     }
@@ -88,6 +87,10 @@ function playGame(){
 ///playGame();
 
 const body = document.querySelector("body");
+
+const computer_Score  = document.querySelector(".computer_score")
+
+const player_Score  = document.querySelector(".player_score")
 
 
 
