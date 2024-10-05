@@ -90,8 +90,29 @@ function playGame(){
 const body = document.querySelector("body");
 
 const rock = document.querySelector(".rock_button");
+rock.addEventListener("click", (e) =>{
+    playRound((choices[0]), getComputerChoice());
+    getScore();
+})
+
 const paper = document.querySelector(".paper_button");
+paper.addEventListener("click", (e) =>{
+    playRound((choices[1]), getComputerChoice());
+    getScore();
+})
+
 const scissors = document.querySelector(".scissors_button");
+scissors.addEventListener("click", (e) =>{
+    playRound((choices[2]), getComputerChoice());
+    getScore();
+})
 
 
 console.log(rock, paper, scissors);
+
+
+function getScore(){
+console.log("human score " + humanScore)
+console.log("computer score " + computerScore)
+}
+
