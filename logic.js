@@ -86,3 +86,12 @@ function playGame(){
 
 
 ///playGame();
+
+const body = document.querySelector("body");
+
+const rock = document.querySelector(".rock_button");
+const paper = document.querySelector(".paper_button");
+const scissors = document.querySelector(".scissors_button");
+
+
+console.log(rock, paper, scissors);
