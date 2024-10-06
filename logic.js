@@ -6,7 +6,7 @@ let choices = ["rock", "paper", "scissors"];
 function randomnum(){
     num = new Uint8Array(1);
   self.crypto.getRandomValues(num);
-  num = (num[0] % 5);
+  num = (num[0] % 3);
   console.log(num)
   return num;
   }
@@ -55,6 +55,7 @@ function playRound(humanChoice, computerChoice){
     function checkGameWin(){
         if(gameOver){
             if( computerScore == humanScore){
+                infoboard.textContent = "TIE!";
                 console.log("TIE no winners!"); 
 
             } else if(computerScore > humanScore){
@@ -100,6 +101,7 @@ const computer_Score  = document.querySelector(".computer_score")
 
 const player_Score  = document.querySelector(".player_score")
 
+const infoboard = document.querySelector(".info > h1");
 
 
 
@@ -131,3 +133,5 @@ console.log("human score " + humanScore)
 console.log("computer score " + computerScore)
 }
 
+const icon  = document.querySelector("img");
+icon.innerHTML = '<img width="60" height="600" src="https://img.icons8.com/ios-glyphs/30/question-mark.png" alt="question-mark"/>';
