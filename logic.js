@@ -2,8 +2,18 @@ console.log("hello world");
 
 let choices = ["rock", "paper", "scissors"];
 
+
+function randomnum(){
+    num = new Uint8Array(1);
+  self.crypto.getRandomValues(num);
+  num = (num[0] % 5);
+  console.log(num)
+  return num;
+  }
+
+
 function getComputerChoice(){
-    let computerChoice = choices[Math.floor(Math.random()*3)];
+    let computerChoice = choices[randomnum()];
     console.log(computerChoice + ": computer choice");
     return computerChoice;
 }
@@ -64,13 +74,11 @@ let humanScore = 0;
 let gameOver = false;
 
 
-function playGame(){
+function game_State(){
     
-    while(round <= 5){
-        console.log(" ")
+    while(round <= 3){
         console.log("round " + round);
-        playRound(getHumanChoice(), getComputerChoice());
-        if (round == 5){
+        if (round == 3){
             gameOver = true;
         }
 
@@ -91,6 +99,7 @@ const body = document.querySelector("body");
 const computer_Score  = document.querySelector(".computer_score")
 
 const player_Score  = document.querySelector(".player_score")
+
 
 
 
