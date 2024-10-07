@@ -6,7 +6,7 @@ let choices = ["rock", "paper", "scissors"];
 function randomnum(){
     num = new Uint8Array(1);
   self.crypto.getRandomValues(num);
-  num = (num[0] % 3);
+  num = (num[0] % 1);
   console.log(num)
   return num;
   }
@@ -104,29 +104,54 @@ const player_Score  = document.querySelector(".player_score")
 
 const infoboard = document.querySelector(".info > h1");
 
+const botIcon = document.querySelector(`.bot [id='${0}'] > img`);
+let playerIcon = document.querySelector(`.player [id='${0}'] > img`);
+   
+
+
+
+    
+
 
 
 
 const rock = document.querySelector(".rock_button");
 rock.addEventListener("click", (e) =>{
     playRound((choices[0]), getComputerChoice());
+    seticonPlayer();
+    iconPosition += 1;
+    playerIcon.setAttribute('src', icon_List[0]);
     getScore();
 })
 
 const paper = document.querySelector(".paper_button");
 paper.addEventListener("click", (e) =>{
     playRound((choices[1]), getComputerChoice());
+    seticonPlayer();
+    iconPosition += 1;
+    playerIcon.setAttribute('src', icon_List[1]);
     getScore();
 })
 
 const scissors = document.querySelector(".scissors_button");
 scissors.addEventListener("click", (e) =>{
-    playRound((choices[2]), getComputerChoice());
+    playRound((choices[1]), getComputerChoice());
+    seticonPlayer();
+    iconPosition += 1;
+    playerIcon.setAttribute('src', icon_List[2]);
     getScore();
 })
 
 
+let iconPosition =  0;
 
+function seticonPlayer(){
+    if(iconPosition === 0){
+        playerIcon = document.querySelector(`.player [id='${0}'] > img`);
+    } else {
+        playerIcon = document.querySelector(`.player [id='${iconPosition}'] > img`);
+    }
+}
 
 
 function getScore(){
