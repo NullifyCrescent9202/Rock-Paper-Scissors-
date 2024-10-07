@@ -94,6 +94,7 @@ function game_State(){
 
 
 ///playGame();
+const icon_List = ["https://img.icons8.com/?size=100&id=37630&format=png&color=000000", "https://img.icons8.com/?size=100&id=uud4UR4NlnEd&format=png&color=000000", "https://img.icons8.com/?size=100&id=r3N5WNHHJz1e&format=png&color=000000"];
 
 const body = document.querySelector("body");
 
@@ -135,3 +136,4 @@ console.log("computer score " + computerScore)
 
 const icon  = document.querySelector("img");
 icon.innerHTML = '<img width="60" height="600" src="https://img.icons8.com/ios-glyphs/30/question-mark.png" alt="question-mark"/>';
+
