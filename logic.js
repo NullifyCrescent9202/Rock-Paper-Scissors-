@@ -3,20 +3,29 @@ console.log("hello world");
 let choices = ["rock", "paper", "scissors"];
 
 
+let a = -1;
+
+let  botIcon = document.querySelector(`.bot [id='${a}'] > img`);
+
 function randomnum(){
     num = new Uint8Array(1);
   self.crypto.getRandomValues(num);
-  num = (num[0] % 1);
+  num = (num[0] % 3);
   console.log(num)
   return num;
   }
 
 
+
 function getComputerChoice(){
-    let computerChoice = choices[randomnum()];
-    console.log(computerChoice + ": computer choice");
-    return computerChoice;
+    let randomv = randomnum();
+    let computerChoice = choices[randomv];
+    botIcon = document.querySelector(`.bot [id='${a += 1}'] > img`);
+
+    botIcon.setAttribute('src', icon_List[randomv]);
+    return 
 }
+
 
 
 function getHumanChoice(){
@@ -104,7 +113,7 @@ const player_Score  = document.querySelector(".player_score")
 
 const infoboard = document.querySelector(".info > h1");
 
-const botIcon = document.querySelector(`.bot [id='${0}'] > img`);
+
 let playerIcon = document.querySelector(`.player [id='${0}'] > img`);
    
 
@@ -144,6 +153,8 @@ scissors.addEventListener("click", (e) =>{
 
 
 let iconPosition =  0;
+
+
 
 function seticonPlayer(){
     if(iconPosition === 0){
