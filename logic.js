@@ -3,9 +3,11 @@ console.log("hello world");
 let choices = ["rock", "paper", "scissors"];
 
 
+
 let a = -1;
 
 let  botIcon = document.querySelector(`.bot [id='${a}'] > img`);
+
 
 function randomnum(){
     num = new Uint8Array(1);
@@ -16,16 +18,16 @@ function randomnum(){
   }
 
 
-
 function getComputerChoice(){
     let randomv = randomnum();
     let computerChoice = choices[randomv];
     botIcon = document.querySelector(`.bot [id='${a += 1}'] > img`);
-
+    console.log(computerChoice);
     botIcon.setAttribute('src', icon_List[randomv]);
-    return 
-}
 
+
+    return computerChoice;
+}
 
 
 function getHumanChoice(){
@@ -113,13 +115,7 @@ const player_Score  = document.querySelector(".player_score")
 
 const infoboard = document.querySelector(".info > h1");
 
-
 let playerIcon = document.querySelector(`.player [id='${0}'] > img`);
-   
-
-
-
-    
 
 
 
@@ -133,6 +129,7 @@ rock.addEventListener("click", (e) =>{
     getScore();
 })
 
+
 const paper = document.querySelector(".paper_button");
 paper.addEventListener("click", (e) =>{
     playRound((choices[1]), getComputerChoice());
@@ -144,7 +141,7 @@ paper.addEventListener("click", (e) =>{
 
 const scissors = document.querySelector(".scissors_button");
 scissors.addEventListener("click", (e) =>{
-    playRound((choices[1]), getComputerChoice());
+    playRound((choices[2]), getComputerChoice());
     seticonPlayer();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[2]);
@@ -153,6 +150,7 @@ scissors.addEventListener("click", (e) =>{
 
 
 let iconPosition =  0;
+
 
 
 
@@ -165,6 +163,7 @@ function seticonPlayer(){
 }
 
 
+
 function getScore(){
 console.log("human score " + humanScore)
 console.log("computer score " + computerScore)
@@ -172,4 +171,3 @@ console.log("computer score " + computerScore)
 
 const icon  = document.querySelector("img");
 icon.innerHTML = '<img width="60" height="600" src="https://img.icons8.com/ios-glyphs/30/question-mark.png" alt="question-mark"/>';
-
