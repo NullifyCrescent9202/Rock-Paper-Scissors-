@@ -1,12 +1,4 @@
-console.log("hello world");
-
 let choices = ["rock", "paper", "scissors"];
-
-
-
-let a = -1;
-
-let  botIcon = document.querySelector(`.bot [id='${a}'] > img`);
 
 
 function randomnum(){
@@ -16,12 +8,18 @@ function randomnum(){
   console.log(num)
   return num;
   }
-
+let a = -1;
 
 function getComputerChoice(){
     let randomv = randomnum();
     let computerChoice = choices[randomv];
+
+
     botIcon = document.querySelector(`.bot [id='${a += 1}'] > img`);
+        if(a === 2){
+        a = -1;
+    }
+    console.log("bot pos " + a);
     console.log(computerChoice);
     botIcon.setAttribute('src', icon_List[randomv]);
 
@@ -104,6 +102,8 @@ function game_State(){
 }
 
 
+
+
 ///playGame();
 const icon_List = ["https://img.icons8.com/?size=100&id=37630&format=png&color=000000", "https://img.icons8.com/?size=100&id=uud4UR4NlnEd&format=png&color=000000", "https://img.icons8.com/?size=100&id=r3N5WNHHJz1e&format=png&color=000000"];
 
@@ -124,6 +124,8 @@ const rock = document.querySelector(".rock_button");
 rock.addEventListener("click", (e) =>{
     playRound((choices[0]), getComputerChoice());
     seticonPlayer();
+    console.log("icon pos " + iconPosition);
+    roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[0]);
     getScore();
@@ -134,6 +136,8 @@ const paper = document.querySelector(".paper_button");
 paper.addEventListener("click", (e) =>{
     playRound((choices[1]), getComputerChoice());
     seticonPlayer();
+    console.log("icon pos " + iconPosition);
+    roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[1]);
     getScore();
@@ -143,6 +147,8 @@ const scissors = document.querySelector(".scissors_button");
 scissors.addEventListener("click", (e) =>{
     playRound((choices[2]), getComputerChoice());
     seticonPlayer();
+    console.log("icon pos " + iconPosition);
+    roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[2]);
     getScore();
@@ -151,11 +157,20 @@ scissors.addEventListener("click", (e) =>{
 
 let iconPosition =  0;
 
+let  botIcon = document.querySelector(`.bot [id='${iconPosition}'] > img`);
+
+function roundPos(){
+    if(iconPosition === 2){
+        iconPosition = -1;
+        console.log("reset")
+    }
+}
+
 
 
 
 function seticonPlayer(){
-    if(iconPosition === 0){
+    if(iconPosition === -1){
         playerIcon = document.querySelector(`.player [id='${0}'] > img`);
     } else {
         playerIcon = document.querySelector(`.player [id='${iconPosition}'] > img`);
