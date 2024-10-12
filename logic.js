@@ -53,6 +53,7 @@ function playRound(humanChoice, computerChoice){
         humanScore += 1;
         infoboard.textContent = "You win!";
         player_Score.textContent = (humanScore);
+        setTimeout(clearBoard, 1.0 * 1000);
         return("Human wins!");
     } else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore += 1;
