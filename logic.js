@@ -9,6 +9,7 @@ function randomnum(){
   return num;
   }
 let a = -1;
+let CurrentBotSelection = null;
 
 function getComputerChoice(){
     let randomv = randomnum();
@@ -37,25 +38,39 @@ function getHumanChoice(){
 };
 
 
+function clearBoard(){
+    infoboard.textContent = "Begin!";
+}
+
 
 function playRound(humanChoice, computerChoice){
     if(humanChoice === computerChoice){
+        infoboard.textContent = "Tie!";
+        setTimeout(clearBoard, 1.0 * 1000);
         return("Tie");
     } else if (humanChoice === "rock" && computerChoice === "scissors"){
         humanScore += 1;
+        infoboard.textContent = "You win!";
         player_Score.textContent = (humanScore);
+        setTimeout(clearBoard, 1.0 * 1000);
         return("Human wins!");
     } else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore += 1;
+        infoboard.textContent = "You win!";
         player_Score.textContent = (humanScore);
+        setTimeout(clearBoard, 1.0 * 1000);
         return("Human wins!");
     } else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore += 1;
+        infoboard.textContent = "You win!";
         player_Score.textContent = (humanScore);
+        setTimeout(clearBoard, 1.0 * 1000);
         return("Human wins!");
     } else {
         computerScore += 1;
+        infoboard.textContent = "You lose!";
         computer_Score.textContent = computerScore;
+        setTimeout(clearBoard, 1.0 * 1000);
         return ("Computer wins!")
     }
     }
@@ -116,7 +131,6 @@ const player_Score  = document.querySelector(".player_score")
 const infoboard = document.querySelector(".info > h1");
 
 let playerIcon = document.querySelector(`.player [id='${0}'] > img`);
-
 
 
 
