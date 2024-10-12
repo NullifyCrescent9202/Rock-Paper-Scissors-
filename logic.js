@@ -9,7 +9,6 @@ function randomnum(){
   return num;
   }
 let a = -1;
-let CurrentBotSelection = null;
 
 function getComputerChoice(){
     let randomv = randomnum();
@@ -39,7 +38,9 @@ function getHumanChoice(){
 
 
 function clearBoard(){
-    infoboard.textContent = "Begin!";
+    if(gameOver == false){
+        infoboard.textContent = "Begin!";
+    }
 }
 
 
@@ -52,7 +53,6 @@ function playRound(humanChoice, computerChoice){
         humanScore += 1;
         infoboard.textContent = "You win!";
         player_Score.textContent = (humanScore);
-        setTimeout(clearBoard, 1.0 * 1000);
         return("Human wins!");
     } else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore += 1;
@@ -76,44 +76,28 @@ function playRound(humanChoice, computerChoice){
     }
 
 
-    function checkGameWin(){
-        if(gameOver){
-            if( computerScore == humanScore){
-                infoboard.textContent = "TIE!";
-                console.log("TIE no winners!"); 
 
-            } else if(computerScore > humanScore){
-                console.log("Computer wins!");
-
-            } else{
-                console.log("Human wins!");
-
-            }
-        }    
-
-    }
-///5 max rounds
-let round = 1;
 let computerScore = 0;
 let humanScore = 0;
 let gameOver = false;
 
 
+
 function game_State(){
-    
-    while(round <= 3){
-        console.log("round " + round);
-        if (round == 3){
+    if(humanScore >= 5){
+        if(humanScore > computerScore){
             gameOver = true;
+            infoboard.textContent = "Game Over you win!";
+
         }
-
-        checkGameWin();
-        console.log(gameOver)
-        round++;
-
     }
-
-
+    
+    if(computerScore >= 5){
+        if(computerScore > humanScore){
+            gameOver = true;
+            infoboard.textContent = "Game over you lose!"
+        }
+    }
 }
 
 
@@ -142,6 +126,7 @@ rock.addEventListener("click", (e) =>{
     roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[0]);
+    game_State();
     getScore();
 })
 
@@ -154,6 +139,7 @@ paper.addEventListener("click", (e) =>{
     roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[1]);
+    game_State();
     getScore();
 })
 
@@ -165,6 +151,7 @@ scissors.addEventListener("click", (e) =>{
     roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[2]);
+    game_State();
     getScore();
 })
 
