@@ -124,6 +124,9 @@ const infoboard = document.querySelector(".info > h1");
 const buttons = document.querySelector(".buttons");
 
 const replayButton = document.createElement("button");
+
+replayButton.style.width = "450px";
+
 replayButton.textContent = "Replay";
 replayButton.addEventListener("click", (e) => {
     location.reload();
