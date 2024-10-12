@@ -41,6 +41,11 @@ function clearBoard(){
     if(gameOver == false){
         infoboard.textContent = "Begin!";
     }
+
+    if(gameOver == true){
+        buttons.innerHTML = "";
+        buttons.append(replayButton);
+    }
 }
 
 
@@ -83,6 +88,8 @@ let gameOver = false;
 
 
 
+
+
 function game_State(){
     if(humanScore >= 5){
         if(humanScore > computerScore){
@@ -113,6 +120,19 @@ const computer_Score  = document.querySelector(".computer_score")
 const player_Score  = document.querySelector(".player_score")
 
 const infoboard = document.querySelector(".info > h1");
+
+const buttons = document.querySelector(".buttons");
+
+const replayButton = document.createElement("button");
+replayButton.textContent = "Replay";
+replayButton.addEventListener("click", (e) => {
+    location.reload();
+})
+
+
+
+
+
 
 let playerIcon = document.querySelector(`.player [id='${0}'] > img`);
 
@@ -156,6 +176,8 @@ scissors.addEventListener("click", (e) =>{
 })
 
 
+
+
 let iconPosition =  0;
 
 let  botIcon = document.querySelector(`.bot [id='${iconPosition}'] > img`);
@@ -187,3 +209,8 @@ console.log("computer score " + computerScore)
 
 const icon  = document.querySelector("img");
 icon.innerHTML = '<img width="60" height="600" src="https://img.icons8.com/ios-glyphs/30/question-mark.png" alt="question-mark"/>';
+
+    if(gameOver === true){
+        buttons.innerHTML = "";
+        buttons.append(replayButton);
+    }
