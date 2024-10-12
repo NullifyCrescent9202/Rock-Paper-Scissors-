@@ -19,11 +19,7 @@ function getComputerChoice(){
         if(a === 2){
         a = -1;
     }
-    console.log("bot pos " + a);
-    console.log(computerChoice);
     botIcon.setAttribute('src', icon_List[randomv]);
-
-
     return computerChoice;
 }
 
@@ -31,7 +27,6 @@ function getComputerChoice(){
 function getHumanChoice(){
     let humanChoice = prompt("enter 0 for rock, enter 1 for paper, enter 2 for scissors!!!");
     humanChoice = choices[humanChoice];
-    console.log(humanChoice + ": human choice");
     return humanChoice;
 
 };
@@ -88,13 +83,11 @@ let gameOver = false;
 
 
 
-
-
 function game_State(){
     if(humanScore >= 5){
         if(humanScore > computerScore){
             gameOver = true;
-            infoboard.textContent = "Game Over you win!";
+            infoboard.textContent = "Game over you win!";
 
         }
     }
@@ -135,8 +128,6 @@ replayButton.addEventListener("click", (e) => {
 
 
 
-
-
 let playerIcon = document.querySelector(`.player [id='${0}'] > img`);
 
 
@@ -145,7 +136,6 @@ const rock = document.querySelector(".rock_button");
 rock.addEventListener("click", (e) =>{
     playRound((choices[0]), getComputerChoice());
     seticonPlayer();
-    console.log("icon pos " + iconPosition);
     roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[0]);
@@ -158,7 +148,6 @@ const paper = document.querySelector(".paper_button");
 paper.addEventListener("click", (e) =>{
     playRound((choices[1]), getComputerChoice());
     seticonPlayer();
-    console.log("icon pos " + iconPosition);
     roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[1]);
@@ -170,7 +159,6 @@ const scissors = document.querySelector(".scissors_button");
 scissors.addEventListener("click", (e) =>{
     playRound((choices[2]), getComputerChoice());
     seticonPlayer();
-    console.log("icon pos " + iconPosition);
     roundPos();
     iconPosition += 1;
     playerIcon.setAttribute('src', icon_List[2]);
@@ -188,10 +176,8 @@ let  botIcon = document.querySelector(`.bot [id='${iconPosition}'] > img`);
 function roundPos(){
     if(iconPosition === 2){
         iconPosition = -1;
-        console.log("reset")
     }
 }
-
 
 
 
@@ -204,16 +190,5 @@ function seticonPlayer(){
 }
 
 
-
-function getScore(){
-console.log("human score " + humanScore)
-console.log("computer score " + computerScore)
-}
-
 const icon  = document.querySelector("img");
 icon.innerHTML = '<img width="60" height="600" src="https://img.icons8.com/ios-glyphs/30/question-mark.png" alt="question-mark"/>';
-
-    if(gameOver === true){
-        buttons.innerHTML = "";
-        buttons.append(replayButton);
-    }
